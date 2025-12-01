@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }} - Online Course Platform{% endblock %}
+
+{% block content %}
+<section class="course-detail-header">
+    <div class="container">
+        <h1>{{ course.title }}</h1>
+        <p class="course-meta">
+            <span>Instructor: {{ course.teacher }}</span>
+            <span>Level: {{ course.level }}</span>
+            <span>Duration: {{ course.duration }}</span>
+        </p>
+    </div>
+</section>
+
+<section class="course-content">
+    <div class="container">
+        <div class="course-description">
+            <h2>About This Course</h2>
+            <p>{{ course.description }}</p>
+        </div>
+
+        <div class="course-curriculum">
+            <h2>Course Curriculum</h2>
+            {% for subject in subjects %}
+            <div class="subject-section">
+                <h3>{{ subject.title }}</h3>
+                <ul class="lessons-list">
+                    {% for lesson in subject.lessons.all %}
+                    <li class="lesson-item">
+                        <a href="{% url 'lesson_detail' lesson.id %}">
+                            <span class="lesson-title">{{ lesson.title }}</span>
+                            <span class="lesson-duration">{{ lesson.duration }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% empty %}
+            <p>No subjects available yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+<!-- ============================================ -->
+<!-- templates/lesson_detail.html -->
+<!-- ============================================ -->
+{% extends 'base.html' %}
+
+{% block title %}{{ lesson.title }} - Online Course Platform{% endblock %}
+
+{% block content %}
+<section class="lesson-detail">
+    <div class="container">
+        <div class="lesson-header">
+            <h1>{{ lesson.title }}</h1>
+            <p class="lesson-meta">
+                <span>Subject: {{ lesson.subject.title }}</span>
+                <span>Duration: {{ lesson.duration }}</span>
+            </p>
+        </div>
+
+        {% if lesson.video_url %}
+        <div class="lesson-video">
+            <iframe src="{{ lesson.video_url }}" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        <div class="lesson-content">
+            <h2>Lesson Content</h2>
+            <div class="lesson-text">
+                {{ lesson.content|linebreaks }}
+            </div>
+        </div>
+
+        <div class="lesson-nav">
+            <a href="{% url 'course_detail' lesson.subject.course.id %}" class="btn-secondary">Back to Course</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

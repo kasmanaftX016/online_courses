@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to Online Learning</h1>
+        <p>Discover thousands of courses taught by expert instructors</p>
+        <a href="{% url 'courses' %}" class="btn-primary">Browse Courses</a>
+    </div>
+</section>
+
+<section class="featured-courses">
+    <div class="container">
+        <h2>Featured Courses</h2>
+        <div class="course-grid">
+            {% for course in courses %}
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>{{ course.title }}</h3>
+                    <span class="course-level">{{ course.level }}</span>
+                </div>
+                <p class="course-description">{{ course.description|truncatewords:20 }}</p>
+                <div class="course-footer">
+                    <span class="course-teacher">{{ course.teacher }}</span>
+                    <span class="course-duration">{{ course.duration }}</span>
+                </div>
+                <a href="{% url 'course_detail' course.id %}" class="btn-secondary">View Course</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

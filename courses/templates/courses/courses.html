@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses - Online Course Platform{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1>All Courses</h1>
+        <p>Explore our comprehensive course catalog</p>
+    </div>
+</section>
+
+<section class="courses-section">
+    <div class="container">
+        <div class="course-grid">
+            {% for course in courses %}
+            <div class="course-card">
+                <div class="course-header">
+                    <h3>{{ course.title }}</h3>
+                    <span class="course-level">{{ course.level }}</span>
+                </div>
+                <p class="course-description">{{ course.description|truncatewords:20 }}</p>
+                <div class="course-footer">
+                    <span class="course-teacher">{{ course.teacher }}</span>
+                    <span class="course-duration">{{ course.duration }}</span>
+                </div>
+                <a href="{% url 'course_detail' course.id %}" class="btn-secondary">View Course</a>
+            </div>
+            {% empty %}
+            <p>No courses available at the moment.</p>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        {% if courses.has_other_pages %}
+        <div class="pagination">
+            {% if courses.has_previous %}
+                <a href="?page=1" class="page-link">First</a>
+                <a href="?page={{ courses.previous_page_number }}" class="page-link">Previous</a>
+            {% endif %}
+
+            <span class="page-current">Page {{ courses.number }} of {{ courses.paginator.num_pages }}</span>
+
+            {% if courses.has_next %}
+                <a href="?page={{ courses.next_page_number }}" class="page-link">Next</a>
+                <a href="?page={{ courses.paginator.num_pages }}" class="page-link">Last</a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
