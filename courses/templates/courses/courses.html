@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Courses - Online Course Platform{% endblock %}
+{% block title %} {% trans 'Courses - Online Course Platform'%} {% endblock %}
 
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1>All Courses</h1>
-        <p>Explore our comprehensive course catalog</p>
+        <h1>{% trans 'All Courses'%}</h1>
+        <p>{% trans 'Explore our comprehensive course catalog'%}</p>
     </div>
 </section>
 
@@ -24,10 +25,10 @@
                     <span class="course-teacher">{{ course.teacher }}</span>
                     <span class="course-duration">{{ course.duration }}</span>
                 </div>
-                <a href="{% url 'course_detail' course.id %}" class="btn-secondary">View Course</a>
+                <a href="{% url 'course_detail' course.id %}" class="btn-secondary">{% trans 'View Course'%}</a>
             </div>
             {% empty %}
-            <p>No courses available at the moment.</p>
+            <p>{% trans 'No courses available at the moment'%}.</p>
             {% endfor %}
         </div>
 
@@ -35,15 +36,15 @@
         {% if courses.has_other_pages %}
         <div class="pagination">
             {% if courses.has_previous %}
-                <a href="?page=1" class="page-link">First</a>
-                <a href="?page={{ courses.previous_page_number }}" class="page-link">Previous</a>
-            {% endif %}
+                <a href="?page=1" class="page-link">{% trans 'First'%}</a>
+                <a href="?page={{ courses.previous_page_number }}" class="page-link">{% trans 'Previous'%}</a>
+            {% endif %}1
 
-            <span class="page-current">Page {{ courses.number }} of {{ courses.paginator.num_pages }}</span>
+            <span class="page-current">{% trans 'Page '%}{{ courses.number }} {% trans 'of'%}{{ courses.paginator.num_pages }}</span>
 
             {% if courses.has_next %}
-                <a href="?page={{ courses.next_page_number }}" class="page-link">Next</a>
-                <a href="?page={{ courses.paginator.num_pages }}" class="page-link">Last</a>
+                <a href="?page={{ courses.next_page_number }}" class="page-link">{% trans 'Next'%}</a>
+                <a href="?page={{ courses.paginator.num_pages }}" class="page-link">{% trans 'Last'%}</a>
             {% endif %}
         </div>
         {% endif %}

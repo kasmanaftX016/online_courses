@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Contact Us - Online Course Platform{% endblock %}
+{% block title %}{% trans 'Contact Us - Online Course Platform' %} {% endblock %}
 
 {% block content %}
 <section class="page-header">
     <div class="container">
-        <h1>Contact Us</h1>
-        <p>Have questions? We'd love to hear from you</p>
+        <h1>{% trans 'Contact Us '%}</h1>
+        <p>{% trans "Have questions? We'd love to hear from you " %}</p>
     </div>
 </section>
 
@@ -27,7 +28,7 @@
                 <div class="form-group">
                     {{ form.message }}
                 </div>
-                <button type="submit" class="btn-primary">Send Message</button>
+                <button type="submit" class="btn-primary">{% trans 'Send Message '%}</button>
             </form>
         </div>
     </div>

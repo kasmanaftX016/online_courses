@@ -1,0 +1,35 @@
+% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ lesson.title }} -{% trans 'Online Course Platform'%} {% endblock %}
+
+{% block content %}
+<section class="lesson-detail">
+    <div class="container">
+        <div class="lesson-header">
+            <h1>{{ lesson.title }}</h1>
+            <p class="lesson-meta">
+                <span>{% trans 'Subject:' %} {{ lesson.subject.title }}</span>
+                <span>{% trans 'Duration:'%} {{ lesson.duration }}</span>
+            </p>
+        </div>
+
+        {% if lesson.video_url %}
+        <div class="lesson-video">
+            <iframe src="{{ lesson.video_url }}" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        <div class="lesson-content">
+            <h2>{% trans 'Lesson Content'%}</h2>
+            <div class="lesson-text">
+                {{ lesson.content|linebreaks }}
+            </div>
+        </div>
+
+        <div class="lesson-nav">
+            <a href="{% url 'course_detail' lesson.subject.course.id %}" class="btn-secondary">{% trans 'Back to Course'%}</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

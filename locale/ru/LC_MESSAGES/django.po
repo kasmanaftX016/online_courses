@@ -1,0 +1,184 @@
+# Russian translations for OnlineCourse project.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: OnlineCourse\n"
+"POT-Creation-Date: 2025-12-05 17:32+0500\n"
+"PO-Revision-Date: 2025-12-05 17:32+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: courses/templates/base.html:18
+msgid "OnlineCourse"
+msgstr "ОнлайнКурс"
+
+#: courses/templates/base.html:21
+msgid "Home"
+msgstr "Главная"
+
+#: courses/templates/base.html:22
+msgid "Courses"
+msgstr "Курсы"
+
+#: courses/templates/base.html:23
+msgid "Teachers"
+msgstr "Преподаватели"
+
+#: courses/templates/base.html:24
+msgid "Contact"
+msgstr "Контакты"
+
+#: courses/templates/base.html:26
+msgid "Logout"
+msgstr "Выйти"
+
+#: courses/templates/base.html:28
+msgid "Login"
+msgstr "Войти"
+
+#: courses/templates/base.html:59
+msgid "Online Course Platform. All rights reserved."
+msgstr "Платформа онлайн-курсов. Все права защищены."
+
+#: courses/templates/courses/contact.html:4
+msgid "Contact Us - Online Course Platform"
+msgstr "Связаться с нами — Платформа онлайн-курсов"
+
+#: courses/templates/courses/contact.html:9
+msgid "Contact Us "
+msgstr "Свяжитесь с нами"
+
+#: courses/templates/courses/contact.html:10
+msgid "Have questions? We'd love to hear from you "
+msgstr "Есть вопросы? Мы будем рады вам помочь"
+
+#: courses/templates/courses/contact.html:31
+msgid "Send Message "
+msgstr "Отправить сообщение"
+
+#: courses/templates/courses/course_detail.html:4
+#: courses/templates/courses/lesson_detail.html:4
+msgid "Online Course Platform"
+msgstr "Платформа онлайн-курсов"
+
+#: courses/templates/courses/course_detail.html:11
+msgid "Instructor:"
+msgstr "Преподаватель:"
+
+#: courses/templates/courses/course_detail.html:12
+msgid "Level:"
+msgstr "Уровень:"
+
+#: courses/templates/courses/course_detail.html:13
+#: courses/templates/courses/lesson_detail.html:13
+msgid "Duration:"
+msgstr "Длительность:"
+
+#: courses/templates/courses/course_detail.html:21
+msgid "About This Course"
+msgstr "О курсе"
+
+#: courses/templates/courses/course_detail.html:26
+msgid "Course Curriculum"
+msgstr "Учебная программа"
+
+#: courses/templates/courses/course_detail.html:42
+msgid "No subjects available yet."
+msgstr "Темы пока отсутствуют."
+
+#: courses/templates/courses/courses.html:4
+msgid "Courses - Online Course Platform"
+msgstr "Курсы — Платформа онлайн-курсов"
+
+#: courses/templates/courses/courses.html:9
+msgid "All Courses"
+msgstr "Все курсы"
+
+#: courses/templates/courses/courses.html:10
+msgid "Explore our comprehensive course catalog"
+msgstr "Изучите наш обширный каталог курсов"
+
+#: courses/templates/courses/courses.html:31
+msgid "No courses available at the moment"
+msgstr "Пока нет доступных курсов"
+
+#: courses/templates/courses/home.html:7
+msgid "Welcome to Online Learning"
+msgstr "Добро пожаловать в онлайн-обучение"
+
+#: courses/templates/courses/home.html:8
+msgid "Discover thousands of courses taught by expert instructors"
+msgstr "Откройте тысячи курсов от опытных преподавателей"
+
+#: courses/templates/courses/home.html:15
+msgid "Featured Courses"
+msgstr "Рекомендуемые курсы"
+
+#: courses/templates/courses/home.html:28
+msgid "View Course"
+msgstr "Просмотр курса"
+
+#: courses/templates/courses/lesson_detail.html:12
+msgid "Subject:"
+msgstr "Тема:"
+
+#: courses/templates/courses/lesson_detail.html:24
+msgid "Lesson Content"
+msgstr "Содержание урока"
+
+#: courses/templates/courses/lesson_detail.html:31
+msgid "Back to Course"
+msgstr "Назад к курсу"
+
+#: courses/templates/courses/login.html:4
+msgid "Login - Online Course Platform"
+msgstr "Вход — Платформа онлайн-курсов"
+
+#: courses/templates/courses/login.html:10
+msgid "Login to Your Account"
+msgstr "Войдите в свой аккаунт"
+
+#: courses/templates/courses/login.html:19
+msgid "Login "
+msgstr "Войти"
+
+#: courses/templates/courses/teachers.html:4
+msgid "Teachers - Online Course Platform"
+msgstr "Преподаватели — Платформа онлайн-курсов"
+
+#: courses/templates/courses/teachers.html:9
+msgid "Our Expert Teachers"
+msgstr "Наши эксперты-преподаватели"
+
+#: courses/templates/courses/teachers.html:10
+msgid "Learn from industry professionals and experienced educators"
+msgstr "Учитесь у профессионалов и опытных преподавателей"
+
+#: courses/templates/courses/teachers.html:31
+msgid "No teachers available at the moment."
+msgstr "Преподаватели пока недоступны."
+
+#: courses/templates/courses/teachers.html:40
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: courses/templates/courses/teachers.html:43
+msgid "Page"
+msgstr "Страница"
+
+#: courses/templates/courses/teachers.html:43
+msgid "of"
+msgstr "из"
+
+#: courses/templates/courses/teachers.html:46
+msgid "Next"
+msgstr "Следующая"
+
+#: courses/templates/courses/teachers.html:47
+msgid "Last"
+msgstr "Последняя"

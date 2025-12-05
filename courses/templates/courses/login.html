@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Login - Online Course Platform{% endblock %}
+{% block title %}{% trans 'Login - Online Course Platform'%}{% endblock %}
 
 {% block content %}
 <section class="login-section">
     <div class="container">
         <div class="login-box">
-            <h1>Login to Your Account</h1>
+            <h1>{% trans 'Login to Your Account'%}</h1>
             <form method="post" class="login-form">
                 {% csrf_token %}
                 <div class="form-group">
@@ -15,7 +16,7 @@
                 <div class="form-group">
                     <input type="password" name="password" placeholder="Password" class="form-input" required>
                 </div>
-                <button type="submit" class="btn-primary">Login</button>
+                <button type="submit" class="btn-primary">{% trans 'Login '%}</button>
             </form>
         </div>
     </div>
