@@ -42,11 +42,19 @@ def contact_view(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact = form.save(commit=False)
+
+            contact.set_current_language('uz')  
+
+            contact.subject = form.cleaned_data['subject']
+            contact.message = form.cleaned_data['message']
+
+            contact.save()
             messages.success(request, 'Your message has been sent successfully!')
             return redirect('contact')
     else:
         form = ContactForm()
+
     return render(request, 'courses/contact.html', {'form': form})
 
 def login_view(request):

@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'courses',
+    'parler',
+    'yourapp.middleware.AutoLogoutMiddleware',
+]
 ]
 
 MIDDLEWARE = [
@@ -41,7 +43,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
+    #my middleware
+    AUTO_LOGOUT_DELAY = 600 
+    ]
 
 # JAZZMIN_SETTINGS = {
 #     "site_title": "My Admin",
@@ -99,6 +103,26 @@ LANGUAGES = [
     ('ru', 'Русский'),
 ]
 
+
+LANGUAGES = [
+    ('uz', 'Uzbek'),
+    ('en', 'English'),
+    ('ru', 'Russian'),
+]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'uz'},
+        {'code': 'en'},
+        {'code': 'ru'},
+    ),
+    'default': {
+        'fallbacks': ['uz'],   # Agar tarjima bo‘lmasa — uz tilidan oladi
+        'hide_untranslated': False,
+    }
+}
+
+
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
@@ -114,4 +138,6 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 
+
+AUTO_LOGOUT_DELAY = 15
