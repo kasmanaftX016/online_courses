@@ -21,7 +21,9 @@
                 <li><a href="{% url 'home' %}">{% trans 'Home'%}</a></li>
                 <li><a href="{% url 'courses' %}">{% trans 'Courses'%}</a></li>
                 <li><a href="{% url 'teachers' %}">{% trans 'Teachers'%}</a></li>
-                <li><a href="{% url 'contact' %}">{% trans 'Contact'%}</a></li>
+                <li><a href="{% url 'users:register' %}">{% trans 'Royxatdan otish'%}</a></li>
+
+                {% comment %} <li><a href="{% url 'contact' %}">{% trans 'Contact'%}</a></li> {% endcomment %}
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'logout' %}">{% trans 'Logout'%}</a></li>
                 {% else %}

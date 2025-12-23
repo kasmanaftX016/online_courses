@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royxatdan otish</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="/">OnlaynKurs</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/">Bosh sahifa</a></li>
+                <li><a href="/courses/">Kurslar</a></li>
+                <li><a href="/teachers/">Oqituvchilar</a></li>
+                <li><a href="/contact/">Boglanish</a></li>
+                <li><a href="/login/" class="btn-login">Kirish</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="login-section">
+            <div class="container">
+                <div class="login-box">
+                    <h1>Royxatdan otish</h1>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn-primary">Royxatdan otish</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Onlayn kurs platformasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+</body>
+</html>
